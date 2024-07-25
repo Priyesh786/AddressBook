@@ -60,3 +60,48 @@ console.log(`City: ${result.city}`);
 console.log(`Phone Number: ${result.phone_no}`);
 console.log(`State: ${result.state}`);
 }
+
+
+
+/*   UPDATE USER    */
+
+function user_update()
+{
+    const check = prompt("Enter the Full name or Employee ID of user you want to update :")
+    const result1 = employee_details.find(name => name.full_name === check);
+    const result2 = employee_details.find(id => id.employee_id === check);
+    if(!result1 && !result2) {
+        console.log("User doesn't exist.")
+        return;
+    }
+
+    console.log("User exists.")
+    const updated_name = prompt("Enter Your Updated Full Name: ");
+    const updated_emp_id = prompt("Enter Your Updated Employee ID: ");
+    const updated_email = prompt("Enter Your Updated Email ID: ");
+    const updated_city= prompt("Enter Your Updated City Name: ");
+    const updated_ph_Number = prompt("Enter Your Updated Phone Number: ");
+    const updated_state = prompt("Enter Your Updated state: ");
+ 
+    if(result1)
+    {
+        result1.full_name = updated_name;
+        result1.employee_id = updated_emp_id;
+        result1.email = updated_email;
+        result1.city = updated_city;
+        result1.phone_no = updated_ph_Number;
+        result1.state = updated_state;
+        return;
+    }
+    if(result2)
+        {
+            result2.full_name = updated_name;
+            result2.employee_id = updated_emp_id;
+            result2.email = updated_email;
+            result2.city = updated_city;
+            result2.phone_no = updated_ph_Number;
+            result2.state = updated_state;
+        }
+}
+
+
