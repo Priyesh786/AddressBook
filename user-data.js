@@ -156,4 +156,38 @@ function sort_users() {
 
 
 
+while(1){
+    console.log("Enter 1 to add User");
+    console.log("Enter 2 to get user by Full Name");
+    console.log("Enter 3 to get user by Employee ID");
+    console.log("Enter 4 to update User Details");
+    console.log("Enter 5 to delete a user.");
+    console.log("Enter 6 to sort a user by any parameter.");
+    const operation = prompt("Enter Number to perform operation  ");
+    switch(operation)
+    {
+        case '1':
+            add_user();
+            break;
+   
+        case '2':
+            get_user_by_full_name();
+            break;
+   
+        case '3':
+            get_user_by_ID();
+            break;
+   
+        case '4':
+            user_update();
+            break;
+   
+        case '5':
+            user_delete();
+            break;  
 
+        case '6':  
+            sort_users();
+            break;                        
+    }
+}
