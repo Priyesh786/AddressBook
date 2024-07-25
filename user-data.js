@@ -94,14 +94,38 @@ function user_update()
         return;
     }
     if(result2)
-        {
-            result2.full_name = updated_name;
-            result2.employee_id = updated_emp_id;
-            result2.email = updated_email;
-            result2.city = updated_city;
-            result2.phone_no = updated_ph_Number;
-            result2.state = updated_state;
-        }
+    {
+        result2.full_name = updated_name;
+        result2.employee_id = updated_emp_id;
+        result2.email = updated_email;
+        result2.city = updated_city;
+        result2.phone_no = updated_ph_Number;
+        result2.state = updated_state;
+    }
 }
+
+
+
+/*     DELETE USER      */
+
+function user_delete(){
+    const check = prompt("Enter the Full Name or Employee ID of the user to delete  :");
+    const result1 = employee_details.findIndex(name => name.full_name === check);
+    const result2 = employee_details.findIndex(id => id.employee_id === check);
+    if(!result1 && !result2) {
+        console.log("User doesn't exist.");
+        return;
+    }
+    console.log("User Deleted.")
+    if(result1) {
+        employee_details.splice(result1,1);
+        return;
+    }
+    if(result2) {
+        employee_details.splice(result2,1);
+    }
+}
+
+
 
 
