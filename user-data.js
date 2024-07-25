@@ -128,4 +128,32 @@ function user_delete(){
 
 
 
+/*    SORT USERS    */
+
+function sort_users() { 
+    const sort_by = prompt("Enter the parameter to sort by (full_name, employee_id, email, city, phone_no, state): ");
+    if(!['full_name', 'employee_id', 'email', 'city', 'phone_no', 'state'].includes(sort_by)) { 
+        console.log("Invalid parameter."); 
+        return; 
+    } 
+    let duplicate_employee_details = [...employee_details]
+    duplicate_employee_details.sort((a, b) => { 
+        if(a[sort_by] < b[sort_by]) return -1; 
+        if(a[sort_by] > b[sort_by]) return 1; 
+        return 0; 
+    }); 
+    console.log(`Users sorted by ${sort_by}:`); 
+    duplicate_employee_details.forEach(user => { 
+        console.log(
+            `Full Name: ${user.full_name}, 
+            Employee ID: ${user.employee_id}, 
+            Email ID: ${user.email},
+            City: ${user.city}, 
+            Phone Number: ${user.phone_no}, 
+            State: ${user.state}`);
+         }); 
+}
+
+
+
 
