@@ -18,6 +18,7 @@ function add_user(){
 }
 
 
+
 /*    GET USER BY FULL NAME     */
 
 function get_user_by_full_name()
@@ -38,3 +39,24 @@ console.log(`Phone Number: ${result.phone_no}`);
 console.log(`State: ${result.state}`);
 }
 
+
+
+/*   GET USER BY EMPLOYEE ID   */
+
+function get_user_by_ID()
+{
+const emp_id = prompt("Enter the Employee ID of the user :")
+const result = employee_details.find(id => id.employee_id === emp_id);
+
+if(!result) {
+    console.log("User doesn't exist.")
+    return;
+}
+console.log("User exists.");
+console.log(`Full Name: ${result.full_name}`);
+console.log(`Employee ID: ${result.employee_id}`);
+console.log(`Email ID: ${result.email}`);
+console.log(`City: ${result.city}`);
+console.log(`Phone Number: ${result.phone_no}`);
+console.log(`State: ${result.state}`);
+}
